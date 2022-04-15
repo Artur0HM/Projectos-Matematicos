@@ -128,6 +128,7 @@ int main () {
                 cin >> primerNumero;
                 cout << "Ingresa el segundo numero: ";
                 cin >> segundoNumero;
+                
                 division = primerNumero / segundoNumero;
                 cout << "La división de " << primerNumero << " / " << segundoNumero << " es: " << division;
                 break;
