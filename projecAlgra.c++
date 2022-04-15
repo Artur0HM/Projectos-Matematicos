@@ -6,6 +6,7 @@ int main () {
     int numeroListInterna;
     int ingresaCantidadNumero;
     float suma, resta, multiplicacion, division;
+    float primerNumeroResta, segundoNumeroResta, primerNuneroDivisión, segundoNumeroDivisión;
     float resultadoSuma, resultadoResta, resultadoMultiplicacion, resultadoDivision;
 
     cout << "INGRESA TUS NOMBRES: ";
@@ -47,6 +48,7 @@ int main () {
         cout << "4. DIVISIÓN" <<endl;
         cout << "QUE DESEAS HACER ESCOGE EL NÚMERO: ";
         cin >> numeroListInterna;
+
             switch (numeroListInterna)
             {
             case 1:
@@ -65,7 +67,15 @@ int main () {
                 break;
 
             case 2:
-                cout << "ESCOGISTE LA RESTA";
+                cout << endl << "****************************" << endl;
+                cout << "**** ESCOGISTE LA RESTA ****" << endl;
+                cout << "****************************" << endl;
+                cout << "Ingresa el primer número para restar: ";
+                cin >> primerNumeroResta;
+                cout << "Ingresa el segundo número para restar: ";
+                cin >> segundoNumeroResta;
+                resta = primerNumeroResta - segundoNumeroResta;
+                cout << "La resta de " << primerNumeroResta << " - " << segundoNumeroResta << " es: " << resta;
                 break;
 
             case 3:
