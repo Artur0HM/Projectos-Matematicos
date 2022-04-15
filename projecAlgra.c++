@@ -1,12 +1,13 @@
 #include <iostream>
+#include <math.h>
 using namespace std;
 int main () {
     char nombres[50];
     int numeroList;
-    int numeroListInterna;
+    int numeroListInterna, multiplicaciónEspecifica;
     int ingresaCantidadNumero;
     float suma, resta, multiplicacion, division;
-    float primerNumeroResta, segundoNumeroResta, primerNuneroDivisión, segundoNumeroDivisión;
+    float primerNumero, segundoNumero, tablaMultiplicacion;
     float resultadoSuma, resultadoResta, resultadoMultiplicacion, resultadoDivision;
 
     cout << "INGRESA TUS NOMBRES: ";
@@ -71,19 +72,64 @@ int main () {
                 cout << "**** ESCOGISTE LA RESTA ****" << endl;
                 cout << "****************************" << endl;
                 cout << "Ingresa el primer número para restar: ";
-                cin >> primerNumeroResta;
+                cin >> primerNumero;
                 cout << "Ingresa el segundo número para restar: ";
-                cin >> segundoNumeroResta;
-                resta = primerNumeroResta - segundoNumeroResta;
-                cout << "La resta de " << primerNumeroResta << " - " << segundoNumeroResta << " es: " << resta;
+                cin >> segundoNumero;
+                resta = primerNumero - segundoNumero;
+                cout << "La resta de " << primerNumero << " - " << segundoNumero << " es: " << resta;
                 break;
 
             case 3:
-                cout << "ESCOGISTE LA MULTIPLICACIÓN";
+                cout << endl << "*************************************" << endl;
+                cout << "**** ESCOGISTE LA MULTIPLICACIÓN ****" << endl;
+                cout << "*************************************" << endl;
+                cout << "DESEAS HACER MULTIPLICAR 2 NÚMEROS O DESEAS SACAR LA TABLA DE UN NÚMERO ESPECIFICO" <<endl;
+                cout << "1. MULTIPLICACIÓN SIMPLE." << endl;
+                cout << "2. TABLA DE MULTIPLICACIÓN DE ?" << endl;
+                cout << "QUE DESEAS HACER ESCOGE EL NÚMERO: ";
+                cin >> multiplicaciónEspecifica;
+
+                    switch (multiplicaciónEspecifica)
+                    {
+                    case 1:
+                        cout << "LEGISTE MULTIPLICACIÓN SIMPLE." << endl;
+                        cout << "Ingresa el primer número: ";
+                        cin >> primerNumero;
+                        cout << "Ingresa el segundo número: ";
+                        cin >> segundoNumero;
+                        multiplicacion = primerNumero * segundoNumero;
+                        cout << "La multiplicación de " << primerNumero << " x " << segundoNumero << " es: " << multiplicacion;
+                        break;
+
+                    case 2:
+                        cout << "ELEGISTE TABLA DE MULTIPLICACIÓN DE ?." << endl;
+                        cout << "QUE TABLA DE MULTIPLICACION QUIERES REALIZA: ";
+                        cin >> tablaMultiplicacion;
+                        cout << "HASTA QUE NÚMERO QUIERES QUE SE MULTIPLIQUE: ";
+                        cin >> ingresaCantidadNumero;
+                            for (int i = 1; i <= ingresaCantidadNumero; i++)
+                            {
+                                multiplicacion = tablaMultiplicacion * i;
+                                cout << i << " x " << tablaMultiplicacion << " = " << multiplicacion << endl;
+                            }
+                        break;
+                    
+                    default:
+                        break;
+                    }
+                
                 break;
 
             case 4:
-                cout << "ESCOGISTE LA DIVISIÓN";
+                cout << endl << "*************************************" << endl;
+                cout << "******* ESCOGISTE LA DIVISIÓN *******" << endl;
+                cout << "*************************************" << endl;
+                cout << "Ingresa el primer número: ";
+                cin >> primerNumero;
+                cout << "Ingresa el segundo numero: ";
+                cin >> segundoNumero;
+                division = primerNumero / segundoNumero;
+                cout << "La división de " << primerNumero << " / " << segundoNumero << " es: " << division;
                 break;
             
             default:
