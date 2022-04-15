@@ -2,10 +2,15 @@
 using namespace std;
 int main () {
     char nombres[50];
+    int numeroList;
+    int numeroListInterna;
+    int ingresaCantidadNumero;
+    float suma, resta, multiplicacion, division;
+    float resultadoSuma, resultadoResta, resultadoMultiplicacion, resultadoDivision;
 
     cout << "INGRESA TUS NOMBRES: ";
     cin.getline(nombres,50);
-    cout << endl << "BIENVENIDO " << nombres << " que operación deseas realizar escoge el número." << endl;
+    cout << endl << "BIENVENIDO " << nombres << endl << endl;
 
     cout << "1. SUMA - RESTA - MULTIPLIZACIÓN - DIVISION." << endl;
     cout << "2. CALCULA LAS LONGITUDES DE UNA CIRCUNFERENCIA." << endl;
@@ -29,5 +34,56 @@ int main () {
     cout << "20. MUESTRE EL NÚMERO SI ES PAR O IMPAR." << endl;
     cout << "21. MUESTRE LOS DIVISORES." << endl;
 
+    cout << "QUE OPERACIÓN VAS A REALIZAR, ESCOGE EL NÚMERO: ";
+    cin >> numeroList;
+
+    switch (numeroList)
+    {
+    case 1:
+        cout << endl << "ESCOGISTE HACER SUMA - RESTA - MULTIPLIZACIÓN - DIVISION." << endl;
+        cout << "1. SUMA" <<endl;
+        cout << "2. RESTA" <<endl;
+        cout << "3. MULTIPLICACIÓM" <<endl;
+        cout << "4. DIVISIÓN" <<endl;
+        cout << "QUE DESEAS HACER ESCOGE EL NÚMERO: ";
+        cin >> numeroListInterna;
+            switch (numeroListInterna)
+            {
+            case 1:
+                cout << endl << "****************************" << endl;
+                cout << "**** ESCOGISTE LA SUMA *****" << endl;
+                cout << "****************************" << endl;
+                cout << "Cuantos digitos quieres sumar: ";
+                cin >> ingresaCantidadNumero;
+                    for (int i = 1; i <= ingresaCantidadNumero; i++)
+                    {
+                        cout << "Ingresa el " << i << " número: ";
+                        cin >> suma;
+                        resultadoSuma = resultadoSuma + suma;               
+                    }
+                    cout << "La suma de los " << ingresaCantidadNumero << " números es: " << resultadoSuma;
+                break;
+
+            case 2:
+                cout << "ESCOGISTE LA RESTA";
+                break;
+
+            case 3:
+                cout << "ESCOGISTE LA MULTIPLICACIÓN";
+                break;
+
+            case 4:
+                cout << "ESCOGISTE LA DIVISIÓN";
+                break;
+            
+            default:
+                break;
+            }
+        
+        break;
+    
+    default:
+        break;
+    }
     return 0;
 }
